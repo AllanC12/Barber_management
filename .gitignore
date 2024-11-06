@@ -1,0 +1,43 @@
+# Diretórios de build
+bin/
+obj/
+
+# Arquivos de configuração de usuário
+*.user
+*.suo
+
+# Configurações de publicação
+*.publishsettings
+
+# Arquivos de log
+*.log
+
+# Cache do sistema
+.vscode/
+.vs/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.old
+
+# Backup de documentos
+~$*
+# Configurações de ambiente local
+.env
+
+# Arquivos de pacote gerados automaticamente
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Arquivos gerados pelo NuGet
+*.nupkg
+*.snupkg
+# Configurações e cache do Rider
+.idea/
+*.DotSettings.user
+
+# Cache do ReSharper
+_ReSharper*/
