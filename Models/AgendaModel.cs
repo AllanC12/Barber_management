@@ -9,7 +9,6 @@ namespace BarberManagement.Models
     public class AgendaModel
     {
         public DateTime Time_service {get; set; }
-        [ForeignKey("")]
         public int AdmModelId {get; set; }
         public int ServicesModelId {get; set; }
         public int ClientModelId {get; set; }
