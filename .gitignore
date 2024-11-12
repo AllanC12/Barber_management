@@ -44,4 +44,4 @@ _ReSharper*/
 
 # Arquivo principal contendo detalhes do banco de dados
 
-Program.cs
+./Program.cs
