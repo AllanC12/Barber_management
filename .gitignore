@@ -41,3 +41,9 @@ project.fragment.lock.json
 
 # Cache do ReSharper
 _ReSharper*/
+
+# Arquivo principal contendo detalhes do banco de dados
+
+Program.cs
+
+/Connection.ini
