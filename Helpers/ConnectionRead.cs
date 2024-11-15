@@ -9,34 +9,37 @@ namespace BarberManagement.Helpers
 {
     public class ConnectionRead
     {
-        public static Dictionary<string,string> ReadArchiveConnection(string path){
+        public static Dictionary<string, string> ReadArchiveConnection(string path)
+        {
 
-            Dictionary<string,string> configs = new Dictionary<string,string>();
+            Dictionary<string, string> configs = new Dictionary<string, string>();
 
-            if(!File.Exists(path)){
+            if (!File.Exists(path))
+            {
                 throw new FileNotFoundException("Arquivo não encotrado no caminho: " + path);
             }
 
             var lines = File.ReadAllLines(path);
 
-            foreach(var line in lines){
+            foreach (var line in lines)
+            {
 
-                if(string.IsNullOrEmpty(line) || line.StartsWith(';')){
-                    continue;
+                if (string.IsNullOrEmpty(line) || line.StartsWith(';')) continue;
 
-                    var parts = line.Split('=',2);
 
-                    if(parts.Length == 2){
-                        var key = parts[0].Trim();
-                        var value = parts[1].Trim();
+                var parts = line.Split('=', 2);
 
-                        configs[key] = value;
-                    }
-                }
+                if (parts.Length == 2)
+                {
+                    var key = parts[0].Trim();
+                    var value = parts[1].Trim();
+
+                    configs[key] = value;
+                }   
             }
 
             return configs;
         }
-        
+
     }
 }

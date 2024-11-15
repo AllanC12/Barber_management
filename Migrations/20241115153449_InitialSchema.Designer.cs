@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BarberManagement.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241112001732_createDb")]
-    partial class createDb
+    [Migration("20241115153449_InitialSchema")]
+    partial class InitialSchema
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,13 +36,13 @@ namespace BarberManagement.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("SenhaAdm")
+                    b.Property<string>("PasswordAdm")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Admin");
+                    b.ToTable("BarberAdmin");
                 });
 
             modelBuilder.Entity("BarberManagement.Models.AgendaModel", b =>
@@ -60,12 +60,12 @@ namespace BarberManagement.Migrations
                     b.Property<int>("ServicesModelId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Time_service")
+                    b.Property<DateTime>("TimeService")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Agenda");
+                    b.ToTable("BarberAgenda");
                 });
 
             modelBuilder.Entity("BarberManagement.Models.ClientModel", b =>
@@ -91,7 +91,7 @@ namespace BarberManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Client");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("BarberManagement.Models.ServicesModel", b =>
@@ -109,7 +109,7 @@ namespace BarberManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Services");
+                    b.ToTable("BarberService");
                 });
 #pragma warning restore 612, 618
         }

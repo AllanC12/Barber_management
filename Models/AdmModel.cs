@@ -11,7 +11,7 @@ namespace BarberManagement.Models
         [Key]
         public int Id {get; set;}
         public string NameAdm {get; set;}
-        public string SenhaAdm {get; set;}
+        public string PasswordAdm {get; set;}
         public string Annotations {get; set;}
 
     }

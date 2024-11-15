@@ -11,7 +11,7 @@ namespace BarberManagement.Models
     {   
         [Key]
         public int Id {get; set;}
-        public DateTime Time_service {get; set; }
+        public DateTime TimeService {get; set; }
         public int AdmModelId {get; set; }
         public int ServicesModelId {get; set; }
         public int ClientModelId {get; set; }

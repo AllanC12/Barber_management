@@ -1,26 +1,25 @@
-@page
-@model BarberManagement.Views.Login.Index
+@model BarberManagement.ViewModels.UserViewModel;
+
 @{
     Layout = null;
     ViewData["Title"] = "Login";
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-
-<!-- Container para centralizar o conteúdo -->
-<div class="container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="card p-4" style="max-width: 400px; width: 100%;">
-        <h3 class="text-center mb-4">Login</h3>
-        <!-- Formulário -->
-        <form>
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
-            </div>
-            <div class="mb-3">
-                <label for="senha" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Entrar</button>
-        </form>
-    </div>
+<h2 class="form-title text-center mb-4">Login</h2>
+<div class="form-container d-flex justify-content-center align-items-center">
+    <form asp-controller="Login" asp-action="LoginPost" method="POST" class="w-50">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Digite seu nome" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+    </form>
 </div>
+
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
