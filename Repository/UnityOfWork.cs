@@ -21,7 +21,7 @@ namespace BarberManagement.Repository
 
         public IBarberAdminRepository BarberAdminRepo{
             get{
-                return _barberAdminRepo = _barberAdminRepo ?? new BarberAdminRepository(_context);
+                return _barberAdminRepo ??= new BarberAdminRepository(_context);
             }
         }
 

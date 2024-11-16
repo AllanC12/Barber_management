@@ -1,9 +1,11 @@
+@model BarberManagement.ViewModels.UserViewModel;
+
 @{
-    Layout = null;
+  Layout = null;
 }
 
- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
- <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
 
 
@@ -11,20 +13,42 @@
 
   <div class="bg-dark opacity-person text-white py-5 px-4 rounded-person shadow" style="width: 350px;">
     <div class="logo w-35 mb-4 mx-auto">
-        <img class="w-100 rounded-circle" src="~/images/logo.webp" alt="">
+      <img class="w-100 rounded-circle" src="~/images/logo.webp" alt="">
     </div>
-    <form>
+    @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("Error"))
+    {
+      var errorMsg = ViewData.ModelState["Error"]!.Errors.FirstOrDefault()?.ErrorMessage;
+      Console.WriteLine(errorMsg);
+
+      <div class="alert alert-danger" role="alert">
+        <h6>@errorMsg</h6>  
+      </div>
+    }
+
+    @{
+      var msgSuccess = TempData["Success"] as string;
+      if(!String.IsNullOrEmpty(msgSuccess)){
+          <div class="alert alert-success">
+            <h6>@TempData["Success"]</h6> 
+          </div>
+      }
+    }
+    <form asp-asp-controller="Login" asp-action="LoginPost" method="POST">
       <div class="mb-3">
-        <input type="text" class="form-control bg-white text-dark border-0 shadow-sm" id="username" placeholder="Usuário">
+        <input asp-for="NameAdm" type="text" class="form-control bg-white text-dark border-0 shadow-sm" id="username"
+          placeholder="Usuário">
       </div>
       <div class="mb-3">
-        <input type="password" class="form-control bg-white text-dark border-0 shadow-sm" id="password" placeholder="Senha">
+        <input asp-for="PasswordAdm" type="password" class="form-control bg-white text-dark border-0 shadow-sm"
+          id="password" placeholder="Senha">
       </div>
-      <button  type="submit" class="btn btn-dark-custom opacity-100 fw-bold text-white rounded-person w-100 text-uppercase mt-3" >Entrar</button>
+      <button type="submit"
+        class="btn btn-dark-custom opacity-100 fw-bold text-white rounded-person w-100 text-uppercase mt-3">Entrar</button>
     </form>
   </div>
 
   <!-- Link do Bootstrap 5 JavaScript (opcional, para funcionalidades JS do Bootstrap) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -7,7 +7,7 @@ namespace BarberManagement.ViewModels
 {
     public class UserViewModel
     {
-        public string UserName {get; set;}
-        public string Password {get; set;}
+        public string NameAdm {get; set;}
+        public string PasswordAdm {get; set;}
     }
 }

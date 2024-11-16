@@ -11,10 +11,10 @@ namespace BarberManagement.data
 
         }
 
-        public DbSet<AdmModel> BarberAdmin {get; set;}
+        public DbSet<BarberAdminModel> BarberAdmin {get; set;}
         public DbSet<AgendaModel> BarberAgenda {get; set;}
-        public DbSet<ClientModel> Customers {get; set;}
-        public DbSet<ServicesModel> BarberService {get; set;}
+        public DbSet<CustomerModel> Customers {get; set;}
+        public DbSet<BarberServiceModel> BarberService {get; set;}
 
 
 
