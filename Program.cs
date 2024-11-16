@@ -1,5 +1,7 @@
 using BarberManagement.data;
 using BarberManagement.Helpers;
+using BarberManagement.Repository;
+using BarberManagement.Repository.Interfaces;
 using BarberManagement.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
@@ -43,6 +45,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IBarberAdminRepository, BarberAdminRepository>();
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IUnityOfWork, UnityOfWork>();
 
 var app = builder.Build();
 

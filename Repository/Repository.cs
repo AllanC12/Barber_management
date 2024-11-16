@@ -18,7 +18,7 @@ namespace BarberManagement.Repository
         }
 
         public T? Get(Expression<Func<T,bool>> predicate){
-            return _context.Set<T>().AsNoTracking().FirstOrDefault();
+            return _context.Set<T>().AsNoTracking().FirstOrDefault(predicate);
         }
         
     }
