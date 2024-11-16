@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BarberManagement.Models
 {
-    public class ClientModel
+    public class CustomerModel
+    
     {   
         [Key]
         public int Id {get; set;}

@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace BarberManagement.Models
 {
-    public class AdmModel
+    public class BarberServiceModel
     {   
         [Key]
         public int Id {get; set;}
-        public string NameAdm {get; set;}
-        public string PasswordAdm {get; set;}
-        public string Annotations {get; set;}
-
+        public string ServiceName {get; set;}
+        public decimal ServicePrice {get; set;}
     }
 }
-
