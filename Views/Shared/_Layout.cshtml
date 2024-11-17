@@ -1,27 +1,73 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BarberManagement</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BarberManagement.styles.css" asp-append-version="true" />
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav
+            class="navbar text-white navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BarberManagement</a>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <!-- #region  --> <a class="navbar-brand text-white" asp-area="" asp-controller="Home"
+                    asp-action="Index">
+                    <img class="rounded-circle logo" src="~/images/logo.webp" />
+                </a>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-bewteen">
+                    <ul class="navbar-nav flex-grow-1 d-sm-flex justify-content-bewteen gap-3">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Index">Agenda</a>
+                            <a class="nav-link text-white d-sm-inline-flex justify-content-bewteen gap-2" asp-area=""
+                                asp-controller="Home" asp-action="Index"><i class="bi bi-journal-medical"></i> Agenda
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Privacy">Anotações</a>
+                            <a class="nav-link text-white d-sm-flex justify-content-bewteen gap-1" asp-area=""
+                                asp-controller="Home" asp-action="Privacy">
+                                <i class="bi bi-pencil-square"></i> Anotações
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white d-sm-flex justify-content-bewteen gap-1" asp-area=""
+                                asp-controller="Home" asp-action="Privacy">
+                                <i class="bi bi-people"></i> Clientes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white d-sm-flex justify-content-bewteen gap-1" asp-area=""
+                                asp-controller="Home" asp-action="Privacy">
+                                <i class="bi bi-scissors"></i> Serviços
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white d-sm-flex justify-content-bewteen gap-1 align-items-center dropdown-toggle" role="button" data-bs-toggle="dropdown" asp-area=""
+                                asp-controller="Home" asp-action="Privacy">
+                                <i class="bi bi-gear"></i> Gerencial
+                            </a>
+                            <ul class="dropdown-menu bg-dark">
+                                <li><a class="dropdown-item text-white bg-dark" href="#">
+                                   <i class="bi bi-person-plus"></i> Cadastrar cliente</a>
+                                </li>
+                                <li><a class="dropdown-item text-white bg-dark" href="#">
+                                   <i class="bi bi-person-plus"></i> Cadastrar barbeiro
+                                    </a>
+                                </li>
+                                <li ><a class="dropdown-item text-white bg-dark" href="#">
+                                   <i class="bi bi-briefcase-fill"></i> Cadastrar serviço
+                                    </a>
+                                </li>
+                                <li ><a class="dropdown-item text-white bg-dark" href="#">
+                                   <i class="bi bi-bag-fill"></i> Cadastrar Produto
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -34,8 +80,8 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="border-top footer text-muted bg-dark">
+        <div class="container text-white">
             &copy; 2024 - BarberManagement - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
@@ -44,4 +90,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

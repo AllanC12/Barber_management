@@ -46,7 +46,7 @@ namespace BarberManagement.Controllers
             {
                 Console.WriteLine("Barbeiro cadastrado");
                 TempData["Success"] = $"Bem vindo {name}!";
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
             else
             {
