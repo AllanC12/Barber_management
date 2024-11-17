@@ -45,21 +45,18 @@ namespace BarberManagement.Controllers
             if (barberAuth != null)
             {
                 Console.WriteLine("Barbeiro cadastrado");
-                TempData["Success"] = $"Bem vindo {name}";
-                return RedirectToAction ("Index");
+                TempData["Success"] = $"Bem vindo {name}!";
+                return RedirectToAction("Index","Home");
             }
             else
             {
-                ModelState.AddModelError("Error", "Usuário não cadastrado");
+                ModelState.AddModelError("Error", "Usuário não cadastrado!");
                 return View("index");
 
             }
 
-            return View("Index");
 
         }
-
-
 
 
     }
