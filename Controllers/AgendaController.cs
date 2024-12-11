@@ -6,11 +6,11 @@ using BarberManagement.Models;
 
 namespace BarberManagement.Controllers;
 
-public class HomeController : Controller
+public class AgendaController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<AgendaController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public AgendaController(ILogger<AgendaController> logger)
     {
         _logger = logger;
     }

@@ -9,10 +9,10 @@
 
 
 
-<body class="d-flex justify-content-center align-items-center vh-100 bg-banner-login overflow-hidden">
+<body class="d-flex justify-content-center align-items-center vh-100 bg-default bg-banner-login overflow-hidden">
 
   <div class="bg-dark opacity-person text-white py-5 px-4 rounded-person shadow" style="width: 350px;">
-    <div class="logo w-35 mb-4 mx-auto">
+    <div class="logo w-25 mb-5 mx-auto">
       <img class="w-100 rounded-circle" src="~/images/logo.webp" alt="">
     </div>
     @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("Error"))
@@ -33,6 +33,7 @@
           </div>
       }
     }
+
     <form asp-asp-controller="Login" asp-action="LoginPost" method="POST">
       <div class="mb-3">
         <input asp-for="NameAdm" type="text" class="form-control bg-white text-dark border-0 shadow-sm" id="username"
