@@ -2,7 +2,6 @@ using BarberManagement.data;
 using BarberManagement.Helpers;
 using BarberManagement.Repository;
 using BarberManagement.Repository.Interfaces;
-using BarberManagement.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Data.Common;

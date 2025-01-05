@@ -1,18 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using BarberManagement.data;
-using Microsoft.AspNetCore.Mvc;
-using BarberManagement.ViewModels;
-using Microsoft.Extensions.Logging;
 using BarberManagement.Models;
-using BarberManagement.Services;
 using BarberManagement.Repository.Interfaces;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+using BarberManagement.Services;
+using Microsoft.AspNetCore.Mvc;
 
-namespace BarberManagement.Controllers
+namespace BarberManagement.Areas.Controllers
 {
     public class LoginController : Controller
     {
@@ -46,7 +37,7 @@ namespace BarberManagement.Controllers
             {
                 Console.WriteLine("Barbeiro cadastrado");
                 TempData["Success"] = $"Bem vindo {name}!";
-                return RedirectToAction("Index","Agenda");
+                return RedirectToAction("Index", "Agenda");
             }
             else
             {

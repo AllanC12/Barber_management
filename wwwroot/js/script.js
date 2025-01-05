@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const errorBox = document.getElementById("error-box");
     const successBox = document.getElementById("success-box");
 
-    function hideBox(boxError){
+    function hideBox(boxError, successBox){
         if(getComputedStyle(boxError).display == "block" || getComputedStyle(successBox).display == "block"){
             setTimeout(() => {
                 boxError.style.setProperty("display","none");

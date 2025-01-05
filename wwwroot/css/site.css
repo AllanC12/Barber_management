@@ -1,13 +1,8 @@
 
-
-html ,body{
- height: 100%;
-}
-
-
 html,body{
   height: 100%;
 }
+
 .bg-default{
   background-position: center;
   background-repeat: no-repeat;
@@ -26,6 +21,18 @@ html,body{
 
 }
 
+.input-search-client{
+    height: 40px;
+    outline: 0;
+    border-radius: 8px;
+}
+
+.card{
+    padding: 1%;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.94);
+    height: 70vh;
+}
 
 .logo{
   width: 50px;
