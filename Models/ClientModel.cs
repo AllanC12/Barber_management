@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BarberManagement.Models
 {
-    public class CustomerModel
+    public class ClientModel
     
     {   
         [Key]
@@ -15,5 +11,7 @@ namespace BarberManagement.Models
         public string LastName {get; set;}
         public DateOnly Birthday {get; set;}
         public string Address {get; set;}
+        public string Favorite_Service { get; set; }
+        public string Observation { get; set; }
     }
 }

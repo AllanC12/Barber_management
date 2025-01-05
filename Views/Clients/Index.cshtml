@@ -1,0 +1,40 @@
+﻿
+<div class="w-100 border border-1 border-white card">
+	<form id="form-search-client" class="w-100 d-flex justify-content-center mt-2">
+		<input id="search-client" type="text" name="name" placeholder="Busque por um cliente" class="text-white bg-transparent border-none w-50 mx-auto px-2 input-search-client mx-auto border border-1" />
+	</form>
+
+	<table class="table table-responsive w-100 mt-3">
+		<thead class="w-100">
+			<tr class="text-white">
+				<th></th>
+				<th></th>
+				<th></th>
+				<th>Nome</th>
+				<th>Aniversário</th>
+				<th>Corte de costume</th>
+				<th>Observações</th>
+			</tr>
+		</thead>
+	</table>
+</div>
+
+<script>
+	const formSearchClient = document.getElementById("form-search-client")
+	const inputSearchElement = document.getElementById("search-client")
+
+	const searchClient = async (name) => {
+		if(name !== ""){
+			const urlSearchClient = `Clients/SearchClient`
+			const response = await fetchData(urlSearchClient, "POST", name)
+			console.log(response)
+		}
+	}
+
+	formSearchClient.addEventListener("submit", (e) => {
+		e.preventDefault()
+		const dataSearch = inputSearchElement.value;
+		searchClient(dataSearch)
+	})
+
+</script>

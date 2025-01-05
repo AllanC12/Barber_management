@@ -8,6 +8,7 @@ namespace BarberManagement.Repository.Interfaces
     public interface IUnityOfWork : IDisposable
     {
         IBarberAdminRepository BarberAdminRepo {get;}
+        IClientRepository ClientRepo { get; }
 
         void BeginTransaction();
 

@@ -2,14 +2,15 @@ using BarberManagement.data;
 using BarberManagement.Helpers;
 using BarberManagement.Repository;
 using BarberManagement.Repository.Interfaces;
+using BarberManagement.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Data.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
-    var caminhoArquivo = Path.Combine(Directory.GetCurrentDirectory(), "Connection.ini");
-    var retorno = ConnectionRead.ReadArchiveConnection(caminhoArquivo);
+    var pathArchive = Path.Combine(Directory.GetCurrentDirectory(), "Connection.ini");
+    var retorno = ConnectionRead.ReadArchiveConnection(pathArchive);
 
     // Definindo vari�veis de configura��o
     var ip = retorno.GetValueOrDefault("IP", "default");
@@ -48,6 +49,7 @@ builder.Services.AddScoped<IBarberAdminRepository, BarberAdminRepository>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnityOfWork, UnityOfWork>();
+builder.Services.AddScoped<ISearchClientService, SearchClientService>();
 
 var app = builder.Build();
 
