@@ -4,7 +4,7 @@ using BarberManagement.Models;
 
 
 
-namespace BarberManagement.Controllers;
+namespace BarberManagement.Areas.Agenda.Controllers;
 
 public class AgendaController : Controller
 {
