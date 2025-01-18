@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BarberManagement.DTOs;
+﻿using BarberManagement.DTOs;
 using BarberManagement.Repository.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BarberManagement.Areas.Clients.Controllers
 {
@@ -18,12 +18,17 @@ namespace BarberManagement.Areas.Clients.Controllers
             return View();
         }
 
+        public IActionResult RegisterClient()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult SearchClient([FromBody] SearchTermDto searchTerm)
         {
             string name = searchTerm.SearchTerm;
 
-            var clients =  _searchClientService.SearchClient(name);
+            var clients = _searchClientService.SearchClient(name);
 
             return Ok(clients);
         }

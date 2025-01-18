@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BarberManagement.styles.css" asp-append-version="true" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-default bg-main">
@@ -53,7 +54,7 @@
                                 <i class="bi bi-gear"></i> Gerencial
                             </a>
                             <ul class="dropdown-menu bg-dark">
-                                <li><a class="dropdown-item text-white bg-dark" >
+                                <li><a asp-controller="Clients" asp-action="RegisterClient" class="dropdown-item text-white bg-dark" >
                                    <i class="bi bi-person-plus"></i> Cadastrar cliente</a>
                                 </li>
                                 <li><a class="dropdown-item text-white bg-dark" href="#">
@@ -89,7 +90,10 @@
     <script src="~/js/main.js" asp-append-version="true"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
