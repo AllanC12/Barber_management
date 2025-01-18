@@ -7,34 +7,67 @@
 	<table class="table table-responsive w-100 mt-3">
 		<thead class="w-100">
 			<tr class="text-white">
-				<th></th>
-				<th></th>
-				<th></th>
 				<th>Nome</th>
+				<th>Sobrenome</th>
 				<th>Aniversário</th>
-				<th>Corte de costume</th>
+				<th>Serviço de costume</th>
 				<th>Observações</th>
 			</tr>
 		</thead>
+		<tbody id="table-clients">
+
+		</tbody>
 	</table>
 </div>
 
 <script>
 	const formSearchClient = document.getElementById("form-search-client")
 	const inputSearchElement = document.getElementById("search-client")
+    const tableClients = document.getElementById("table-clients")
 
 	const searchClient = async (name) => {
 		if(name !== ""){
 			const urlSearchClient = `Clients/SearchClient`
 			const response = await fetchData(urlSearchClient, "POST", name)
-			console.log(response)
+			return response
 		}
 	}
 
-	formSearchClient.addEventListener("submit", (e) => {
+	const showClients = (clients) => {
+
+		clients.forEach(client => {
+		  const tr = document.createElement("tr")
+		  tr.classList.add("w-100","text-white")
+
+		  const tdName = document.createElement("td")
+		  const tdLastName = document.createElement("td")
+		  const tdBirthday = document.createElement("td")
+		  const tdService = document.createElement("td")
+		  const tdObs = document.createElement("td")
+
+		  tdName.textContent = client.name
+		  tdLastName.textContent = client.lastName
+		  tdBirthday.textContent = client.birthday
+		  tdService.textContent = client.favorite_Service
+		  tdObs.textContent = client.observation
+
+		  tr.appendChild(tdName)
+		  tr.appendChild(tdLastName)
+		  tr.appendChild(tdBirthday)
+		  tr.appendChild(tdService)
+		  tr.appendChild(tdObs)
+
+		  tableClients.appendChild(tr)
+		})
+	}
+
+	formSearchClient.addEventListener("submit", async (e) => {
 		e.preventDefault()
 		const dataSearch = inputSearchElement.value;
-		searchClient(dataSearch)
+		const clients = await searchClient(dataSearch)
+		tableClients.innerHTML = ``
+		inputSearchElement.value = ''
+	    showClients(clients)
 	})
 
 </script>
