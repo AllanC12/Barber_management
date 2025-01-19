@@ -35,7 +35,6 @@ namespace BarberManagement.Areas.Controllers
 
 			if (barberAuth != null)
 			{
-				TempData["Success"] = $"Bem vindo {name}!";
 				return RedirectToAction("Index", "Agenda");
 			}
 			else
