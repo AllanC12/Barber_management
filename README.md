@@ -27,6 +27,7 @@ até a venda de produtos que o estabelecimento pode oferecer.
 
 <div allign="center">
 	<img src="https://github.com/user-attachments/assets/1d70bfa4-fb06-4693-9b0b-3eeac3b3cd05" alt="login"/>
-	<img src="https://github.com/user-attachments/assets/0003aa66-2ac5-4cd7-924d-9d616333f745" alt="home"/>
-	<img src="https://github.com/user-attachments/assets/0f669f19-d7e9-43dc-80bb-b8edd7b1dfa9" alt="clients"/>
+	<img src="https://github.com/user-attachments/assets/90fdf92b-8264-4ddf-aa2f-8b68dabfc143" alt="home"/>
+	<img src="https://github.com/user-attachments/assets/f9a9e67c-633b-4f22-b530-6d492f8b2d4b" alt="clients"/>
+	<img src="https://github.com/user-attachments/assets/f18fdae8-148f-42a4-9f0f-701028e7eaaf" alt="clients"/>
 </div>
