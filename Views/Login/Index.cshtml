@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
 
-
+<html>
 <body class="d-flex justify-content-center align-items-center vh-100 bg-default bg-banner-login overflow-hidden">
 
   <div class="bg-dark opacity-person text-white py-5 px-4 rounded-person shadow" style="width: 350px;">
@@ -22,15 +22,7 @@
       <div id="error-box" class="alert alert-danger" role="alert">
         @errorMsg  
       </div>
-    }
-
-    @{
-      var msgSuccess = TempData["Success"] as string;
-      if(!String.IsNullOrEmpty(msgSuccess)){
-          <div id="success-box" class="alert alert-success">
-            @TempData["Success"]
-          </div>
-      }
+      
     }
 
     <form asp-area="Login" asp-controller="Login" asp-action="LoginPost" method="POST">
@@ -51,5 +43,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="~/js/script.js"></script>
 </body>
-
 </html>
+
+<script>
+    const errorBox = document.getElementById("error-box")
+    if (errorBox.innerText.trim() !== "") {
+        setTimeout(() => {
+            errorBox.style.setProperty("display","none")
+        },3000)
+    }
+
+</script>
