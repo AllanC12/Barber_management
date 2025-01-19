@@ -1,19 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace BarberManagement.Repository.Interfaces
 {
-    public interface IUnityOfWork : IDisposable
-    {
-        IBarberAdminRepository BarberAdminRepo {get;}
-        IClientRepository ClientRepo { get; }
+	public interface IUnityOfWork : IDisposable
+	{
+		IBarberAdminRepository BarberAdminRepository { get; }
+		IClientRepository ClientRepository { get; }
 
-        void BeginTransaction();
+		void BeginTransaction();
 
-        void Commit();
+		void Commit();
 
-        void Rollback();
-    }
+		void Rollback();
+	}
 }

@@ -18,7 +18,6 @@
     @if (!ViewData.ModelState.IsValid && ViewData.ModelState.ContainsKey("Error"))
     {
       var errorMsg = ViewData.ModelState["Error"]!.Errors.FirstOrDefault()?.ErrorMessage;
-      Console.WriteLine(errorMsg);
 
       <div id="error-box" class="alert alert-danger" role="alert">
         @errorMsg  
@@ -34,7 +33,7 @@
       }
     }
 
-    <form asp-area="Login" asp-asp-controller="Login" asp-action="LoginPost" method="POST">
+    <form asp-area="Login" asp-controller="Login" asp-action="LoginPost" method="POST">
       <div class="mb-3">
         <input asp-for="NameAdm" type="text" class="form-control bg-white text-dark border-0 shadow-sm" id="username"
           placeholder="Usuário">

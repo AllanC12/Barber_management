@@ -1,0 +1,50 @@
+﻿@model BarberManagement.Models.ClientModel;
+
+@{
+	var successMessage = TempData["SuccessRegister"] as string;
+}
+
+<div class="w-100 border border-1 border-white card d-flex justify-content-center align-items-center" data-aos="fade-right">
+
+
+	<form asp-controller="Clients"  asp-action="RegisterClientPost" id="form-search-client" class="w-100 d-flex justify-content-center align-items-center flex-column gap-2 mt-4 h-100">
+
+		@if(!String.IsNullOrEmpty(successMessage))
+		{
+			<div id="success-box" class="alert alert-success mb-1 mt-0 p-1">
+				@successMessage
+			</div>
+		}
+
+		<input required asp-for="Name" id="name-client" type="text" placeholder="Nome..." 
+		 class="h-35 border-none w-50 mx-auto px-2 input-register-client mx-auto border border-1" />
+		 
+		<input required asp-for="LastName" id="lastname-client" type="text" placeholder="Sobrenome..." 
+		 class="h-35 border-none w-50 mx-auto px-2 input-register-client mx-auto border border-1" />
+
+		<input required asp-for="Birthday" title="Data de nascimento do cliente..." id="birthday-client" type="date" 
+		 class="h-35 border-none w-50 mx-auto px-2 input-register-client mx-auto border border-1" />
+
+		<input required asp-for="Address" id="address-client" type="text" placeholder="Endereço..."
+			   class="h-35 border-none w-50 mx-auto px-2 input-search-client mx-auto border border-1" />
+
+		<input asp-for="Favorite_Service" id="favorite-service" type="text" placeholder="Serviço de costume..." 
+		 class="h-35 border-none w-50 mx-auto px-2 input-register-client mx-auto border border-1" />
+
+		<textarea asp-for="Observation" id="observation" placeholder="Cadastre observações..."
+		 class="border-none w-50 mx-auto px-2 input-register-client mx-auto border border-1 h-50"></textarea>
+
+		<input class="px-5 py-1 text-dark bg-white rounded rounded-pill border-0 custom-hover" type="submit" value="Cadastrar cliente"/>
+	</form>
+</div>
+
+<script>
+	const successBox = document.getElementById("success-box")
+
+	if(successBox.innerText.trim() != ""){
+		setTimeout(() => {
+			successBox.style.setProperty("display", "none")
+		}, 3000)
+	}
+
+</script>
