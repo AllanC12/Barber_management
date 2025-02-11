@@ -50,6 +50,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnityOfWork, UnityOfWork>();
 builder.Services.AddScoped<ISearchClientService, SearchClientService>();
 builder.Services.AddScoped<IInsertClientService, InsertClientService>();
+builder.Services.AddScoped<IInsertBarberService, InsertBarberService>();
 
 var app = builder.Build();
 
